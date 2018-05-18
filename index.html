@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI Memo App 2.0</title>
+
+  <script src="lib/onsen/js/onsenui.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- First navigation component: Navigator. This will remain always on top of the app. -->
+  <ons-navigator id="myNavigator" page="splitter.html">
+  </ons-navigator>
+
+
+  <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
+  <template id="splitter.html">
+    <ons-page>
+      <ons-splitter id="mySplitter">
+        <ons-splitter-side page="html/menu.html" swipeable width="250px" collapse swipe-target-width="50px">
+        </ons-splitter-side>
+        <ons-splitter-content page="tabbar.html">
+        </ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </template>
+
+  <!-- Third navigation component: Tabbar. This will disappear if the first or second components change their content. -->
+  <template id="tabbar.html">
+
+    <ons-page id="tabbarPage">
+
+      <ons-toolbar>
+
+        <div class="left">
+          <!-- Toolbar-button with different icons depending on the platform. -->
+          <ons-toolbar-button component="button/menu">
+            <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+
+        <div class="center">Tinder Like App</div>
+
+      </ons-toolbar>
+
+      <ons-page id="mainPage">
+          <h2 class="center">Sorry currently we don't have more options</h2>
+          <figure class="center" width="100%">
+              <img src="http://via.placeholder.com/350x350" alt="" width="90%"/>
+              <figcaption></figcaption>
+          </figure>
+          <section class="center">
+              <ons-button id="dislike">Dislike</ons-button>
+              <ons-button id="like">Like</ons-button>
+          </section>
+      
+      </ons-page>
+      
+    </ons-page>
+
+    
+
+  </template>
+
+</body>
+
+</html>
