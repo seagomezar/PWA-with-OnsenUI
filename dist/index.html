@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen Tnder Like App</title>
+</head>
+
+<body>
+
+  <!-- First navigation component: Navigator. This will remain always on top of the app. -->
+  <ons-navigator id="myNavigator" page="splitter.html">
+  </ons-navigator>
+
+
+  <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
+  <template id="splitter.html">
+    <ons-page>
+      <ons-splitter id="mySplitter">
+        <ons-splitter-side page="menu.html" swipeable width="250px" collapse swipe-target-width="50px">
+        </ons-splitter-side>
+        <ons-splitter-content page="tabbar.html">
+        </ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </template>
+
+  <!-- Third navigation component: Tabbar. This will disappear if the first or second components change their content. -->
+  <template id="tabbar.html">
+    <ons-page id="tabbarPage">
+      <ons-toolbar>
+        <div class="left">
+          <!-- Toolbar-button with different icons depending on the platform. -->
+          <ons-toolbar-button component="button/menu">
+            <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">Tinder Like App</div>
+      </ons-toolbar>
+      <ons-page id="mainPage">
+          <h2 class="center">Sorry currently we don't have more options</h2>
+          <figure class="center" width="100%">
+              <img src="http://via.placeholder.com/350x350" alt="" width="90%"/>
+              <figcaption></figcaption>
+          </figure>
+          <section class="center">
+              <ons-button id="dislike">Dislike</ons-button>
+              <ons-button id="like">Like</ons-button>
+          </section>
+      </ons-page>
+    </ons-page>
+
+    
+
+  </template>
+
+  <template id="menu.html">
+    <ons-page id="menuPage">
+      <ons-list id="default-category-list">
+    
+        <ons-list-item tappable>
+          <div class="left">
+            <ons-radio name="categoryGroup" input-id="r-buscar" checked></ons-radio>
+          </div>
+          <label class="center" for="r-buscar">Buscar</label>
+        </ons-list-item>
+    
+        <ons-list-item tappable category-id="">
+          <div class="left">
+            <ons-radio name="categoryGroup" input-id="r-perfil"></ons-radio>
+          </div>
+          <label class="center" for="r-perfil">Perfil</label>
+        </ons-list-item>
+    
+        <ons-list-item tappable category-id="">
+          <div class="left">
+            <ons-radio name="categoryGroup" input-id="r-sobre"></ons-radio>
+          </div>
+          <label class="center" for="r-sobre">Sobre</label>
+        </ons-list-item>
+    
+        <ons-list-item tappable category-id="">
+          <div class="left">
+            <ons-radio name="categoryGroup" input-id="r-salir"></ons-radio>
+          </div>
+          <label class="center" for="r-salir">Salir</label>
+        </ons-list-item>
+    
+      </ons-list>
+    
+    </ons-page>
+  </template>
+  <script>
+      // App logic.
+  window.myApp = {};
+    </script>
+  <script src="bundle.js"></script>
+
+</body>
+
+</html>

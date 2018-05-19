@@ -1,3 +1,4 @@
+import ons from 'onsenui';
 /***********************************************************************
  * App Controllers. These controllers will be called on page initialization. *
  ***********************************************************************/
