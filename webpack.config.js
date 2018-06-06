@@ -24,10 +24,13 @@ module.exports = {
       filename: 'index.html' //relative to root of the application
     }),
     new CopyWebpackPlugin([
-      {flatten: true, from: './src/**/*.html', to: path.resolve(__dirname, 'dist'), force: true }
-    ], {
-      ignore: [path.resolve(__dirname, 'src/index.html')],
-    })
+      {
+        flatten: true, 
+        from: './src/**/*.html', 
+        to: path.resolve(__dirname, 'dist'), 
+        force: true 
+      }
+    ], { ignore: [ 'index.html' ] })
   ],
   module: {
     rules: [
@@ -43,6 +46,13 @@ module.exports = {
           'file-loader'
         ]
       },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
     ]
   }
 };

@@ -4,27 +4,10 @@
 
 if (!window.controllers)
     window.controllers = {};
-
+console.log("preCONTENT")
 window.controllers.contentPage = (page) => {
-    // First time
-    let currentOption = window.services.next();
-    tis.render(currentOption);
-
-    // Clic Handler dislike
-    document.querySelector('#dislike').onclick = () => {
-        window.services.addDislike(window.services.current);
-        currentOption = window.services.next();
-        this.render(currentOption);
-    };
-
-    // Click Handler like
-    document.querySelector('#like').onclick = () => {
-        window.services.addLike(window.services.current);
-        currentOption = window.services.next();
-        this.render(currentOption);
-    };
-
-    this.render = (option) => {
+    console.log("CONTENT")
+    const render = (option) => {
         if (option) {
             document.querySelector('figcaption').innerText = option.title;
             document.querySelector('img').src = option.image;
@@ -37,4 +20,23 @@ window.controllers.contentPage = (page) => {
         }
 
     }
+    // First time
+    let currentOption = window.services.next();
+    render(currentOption);
+
+    // Clic Handler dislike
+    document.querySelector('#dislike').onclick = () => {
+        window.services.addDislike(window.services.current);
+        currentOption = window.services.next();
+        render(currentOption);
+    };
+
+    // Click Handler like
+    document.querySelector('#like').onclick = () => {
+        window.services.addLike(window.services.current);
+        currentOption = window.services.next();
+        render(currentOption);
+    };
+
+    
 };

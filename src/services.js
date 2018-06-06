@@ -3,18 +3,18 @@
  ***********************************************************************************/
 
 const user = {
-  id : "XXXX-XXXX"
+  id: "XXXX-XXXX"
 };
 
 window.services = {
   current: -1,
 
   next: () => {
-    if (window.services.current < window.services.options.length-1) {
+    if (window.services.current < window.services.options.length - 1) {
       window.services.current++;
       return window.services.options[window.services.current];
     }
-    return null;   
+    return null;
   },
 
   last: () => {
@@ -22,21 +22,21 @@ window.services = {
       current--;
       return window.services.options[window.services.current];
     }
-    return null;  
+    return null;
   },
 
-  addLike : (option) => {
+  addLike: (option) => {
     option.user = user;
     window.services.likes.push(option);
   },
 
-  addDislike : (option)=>{
+  addDislike: (option) => {
     option.user = user;
     window.services.dislikes.push(option);
   },
 
-  likes : [],
-  dislikes : [],
+  likes: [],
+  dislikes: [],
 
   ////////////////////////
   // Initial Data Service //
